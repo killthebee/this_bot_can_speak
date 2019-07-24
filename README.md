@@ -20,8 +20,11 @@ pip install -r requirements.txt
 
 ```
 Also, you need to create your DialogFlow project and one agent in it.
+
 You can name agent all you want, but make sure to set ru language code.
+
 Then you need to fetch your very own google application credentials json file. Go [here](https://cloud.google.com/docs/authentication/getting-started) for more information.
+
 And make 2 Telegram bots, 1 vk community and gather 3 api tokens form VK, [info](https://vk.com/dev/bots_docs?f=1.1.%2B%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2B%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%2B%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0). 2 from Telegram's [botFather](https://medium.com/shibinco/create-a-telegram-bot-using-botfather-and-get-the-api-token-900ba00e0f39).
 
 
