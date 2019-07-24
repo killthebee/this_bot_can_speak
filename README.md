@@ -68,9 +68,13 @@ python tg_bot.py
 ### Enviroment Variables
 
 GOOGLE_APPLICATION_CREDENTIALS here must be stored path to your google application credentials json file.
+
 DIALOGFLOW_PROJECT_ID name of your dialog flow project.
+
 TG1_TOKEN api token of your main telegram bot.
+
 TG2_TOKEN api token of your auxilary telegram bot.
+
 VK_TOKEN vk api token.
 
 ### Project Goals
