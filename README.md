@@ -44,23 +44,10 @@ And make 2 Telegram bots, 1 vk community and gather their api tokens. 1 form VK,
 ### Launch example
 
 Before begin make sure what you set up enviroment variables as listed below.
-Run scriptteacher.py it'll make your dialog flow agent capable of speaking.
+Run launcher.py with positional arg TG or VK, what way app will know witch bot to launch. In addition you can use optional arg -t Yes if you need to teach your bot some phrases. Like in example below.
 ```
 
-python scriptteacher.py
-
-```
-Then you can run either tg or vk bot script:
-
-```
-
-python vk_bot.py
-
-```
-
-```
-
-python tg_bot.py
+python launcher.py TG -t Yes
 
 ```
 
