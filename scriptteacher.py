@@ -27,7 +27,8 @@ def create_intent(display_name, training_phrases_parts,
     intent = dialogflow.types.Intent(
         display_name=display_name,
         training_phrases=training_phrases,
-        messages=[message])
+        messages=[message]
+        )
 
     response = intents_client.create_intent(parent, intent)
 
@@ -40,11 +41,17 @@ def check_intent_name(display_name):
     intents = intents_client.list_intents(parent)
     intent_names = [
         intent.name for intent in intents
-        if intent.display_name == display_name]
+        if intent.display_name == display_name
+        ]
     if intent_names == []:
         return True:
     else:
         return False
+
+
+def unpack_q_and_a(**dictionary):
+
+    return dictionary['questions'], dictionary['answer']
 
 
 def main():
@@ -56,21 +63,13 @@ def main():
     response = requests.get(url)
     response.raise_for_status()
     resp_unpckd = response.json()
-    amount_of_new_intents = len(list(resp_unpckd.keys()))
-    for intent in range(0,amount_of_new_intents - 1):
-
-        name_for_new_intent = list(resp_unpckd.keys())[intent]
-        intent_dont_exist = check_intent_name(display_name)
-        if intent_dont_exist:
-            intent_message = []
-            answers_for_intent = str(resp_unpckd[list(resp_unpckd.keys())[intent]]['answer'])
-            intent_message.append(answers_from_json)
-            training_phrases_for_intent = resp_unpckd[list(resp_unpckd.keys())[intent]]['questions']
-
+    for intents_name in resp_unpckd:
+        if check_intent_name(intents_name):
+            training_phrases, answer = unpack_q_and_a(**resp_unpckd[intent_name])
             create_intent(
-            name_for_new_intent,
-            training_phrases_for_intent,
-            intent_message
+                intents_name,
+                training_phrases,
+                answer
             )
 
 

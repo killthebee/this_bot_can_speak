@@ -17,6 +17,6 @@ def fetch_dialogflow(session_id, message):
     except InvalidArgument:
         raise
     return {
-    'text':response.query_result.fulfillment_text,
-    'is_fallback':response.query_result.intent.is_fallback
+        'text': response.query_result.fulfillment_text,
+        'is_fallback': response.query_result.intent.is_fallback
     }
